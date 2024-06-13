@@ -53,7 +53,9 @@ Welcome to the Introduction to Kafka Data Streams class. This repository contain
 ### 3. Exercises
 
 We have provided a few beginner-level exercises to practice using Kafka with Python.
-Please check the documentation if you're stuck: https://kafka.apache.org/documentation/
+Please check the documentation if you're stuck: 
+ - https://kafka-python.readthedocs.io/en/master/apidoc/KafkaProducer.html
+ - https://kafka-python.readthedocs.io/en/master/apidoc/KafkaConsumer.html
 
 #### Exercise 1: Writing a Kafka Producer
 
