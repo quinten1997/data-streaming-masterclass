@@ -25,12 +25,13 @@ INSERT INTO currency_rates (currency, rate, rate_time) VALUES
 ('GBP', 0.75, '2023-06-13 12:00:00'),
 ('USD', 1.0, '2023-06-13 12:15:00'),
 ('EUR', 0.86, '2023-06-13 12:15:00'),
-('GBP', 0.76, '2023-06-13 12:15:00');
+('GBP', 0.76, '2023-06-13 12:15:00'),
+('GBP', 0.86, '2023-06-13 12:30:00');
 
 -- Perform temporal join
 SELECT o.order_id, o.currency, o.order_time, cr.rate, cr.rate_time
 FROM orders AS o
 LEFT JOIN currency_rates AS cr ON o.currency = cr.currency
-AND cr.rate_time <= o.order_time
+AND cr.rate_time = o.order_time
 ORDER BY cr.rate_time DESC
-LIMIT 1;
+;
