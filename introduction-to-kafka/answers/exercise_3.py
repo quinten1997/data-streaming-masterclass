@@ -28,11 +28,17 @@ def consume_and_process_messages():
         value_serializer=lambda v: json.dumps(v).encode('utf-8')
     )
 
+    count = 0
     for message in consumer:
         data = message.value
         data['status'] = 'processed'
         producer.send('processed_numbers', data)
         print(f'Processed and forwarded {data}')
+        count += 1
+        
+        # cut off the stream.
+        if count == 10:
+            break
 
 if __name__ == "__main__":
     produce_messages()
