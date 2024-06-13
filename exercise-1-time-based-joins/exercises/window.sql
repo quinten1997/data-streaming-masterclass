@@ -27,5 +27,5 @@ INSERT INTO stream2 (id, value2, event_time) VALUES
 -- Perform window join
 SELECT s1.id, s1.value1, s2.value2, s1.event_time AS time1, s2.event_time AS time2
 FROM stream1 AS s1
-JOIN -- TODO fill in the correct join.
+JOIN -- TODO fill in the correct join use DATETIME(s2.event_time, '-5 minutes') AND DATETIME(s2.event_time, '+5 minutes') as a window
 ;

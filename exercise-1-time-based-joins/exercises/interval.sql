@@ -24,8 +24,8 @@ INSERT INTO checkouts (user_id, product_id, datetime_occurred) VALUES
 (2, 102, '2023-06-13 13:00:00'),
 (3, 103, '2023-06-13 14:30:00');
 
--- Perform interval join
+-- Perform interval join 
 SELECT co.user_id, co.product_id, co.datetime_occurred AS checkout_time, cl.datetime_occurred AS click_time
 FROM checkouts AS co
-JOIN -- TODO fill in the correct join
+JOIN -- TODO fill in the correct join use DATETIME(cl.datetime_occurred, '+1 hour') for the interval upperbound
 ;
